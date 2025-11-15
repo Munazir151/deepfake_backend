@@ -266,6 +266,12 @@ def health_check():
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    """Ultra-simple ping endpoint"""
+    return 'pong', 200
+
+
 @app.route('/predict', methods=['POST'])
 def predict():
     """
