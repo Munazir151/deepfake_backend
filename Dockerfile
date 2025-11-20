@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Install system dependencies
+# Install system dependencies for OpenCV and other libraries
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     libxext6 \
     libxrender-dev \
     libgomp1 \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
